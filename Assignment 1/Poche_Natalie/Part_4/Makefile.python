@@ -1,0 +1,11 @@
+# Default target
+all: v_cipher
+
+# Rule to create the executable and fix line endings
+v_cipher: v_cipher.py
+	cp v_cipher.py v_cipher
+	chmod +x v_cipher
+	sed -i 's/\r$$//' v_cipher
+
+clean:
+	rm -f v_cipher

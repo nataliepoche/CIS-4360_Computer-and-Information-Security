@@ -1,0 +1,10 @@
+# Default target
+all: mc_cipher
+
+# Create the 'mc_cipher' executable from python_program.py
+mc_cipher: c_cipher.py
+	cp c_cipher.py mc_cipher
+	chmod +x mc_cipher
+
+clean:
+	rm -f mc_cipher

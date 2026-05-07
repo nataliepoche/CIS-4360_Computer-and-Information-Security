@@ -1,0 +1,17 @@
+grep -oE "[a-zA-Z0-9]+" 'BeeMovie.txt' | sort -u > BeeMovie_Dictionary.txt
+
+john --format=md5crypt --wordlist=BeeMovie_Dictionary.txt hash.txt
+
+john --show --format=md5crypt hash.txt
+
+john --format=descrypt --wordlist=BeeMovie_Dictionary.txt hash.txt
+
+john --format=descrypt --show hash.txt
+
+john --format=bcrypt --wordlist=rockyou-20.txt hash.txt
+
+john --format=bcrypt --show hash.txt
+
+python3 -c 'import crypt; print(crypt.crypt("UFL", "2J"))'
+
+rm ~/.john/john.pot

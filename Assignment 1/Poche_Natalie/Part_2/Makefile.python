@@ -1,0 +1,12 @@
+# Default rule
+all: python_program
+
+# Rule to create the 'executable' from the .py script
+# This triggers if python_program.py is newer than python_program
+python_program: python_program.py
+	cp python_program.py python_program
+	chmod +x python_program
+
+# Clean rule to remove the generated file
+clean:
+	rm -f python_program
